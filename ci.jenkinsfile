@@ -3,6 +3,8 @@
 @Library('jenkinssharelib@main') _
 
 def build = new org.devops.build()
+def deploy = new org.devops.deploy()
+
 
 String buildType = "${env.buildType}"
 
@@ -15,8 +17,9 @@ pipeline{
         stage("build"){
             steps{
                 script{
-                    mvnHome = tool "M2"
+                    /*mvnHome = tool "M2"*/
                     build.Build(buildType,buildShell)
+		    deploy.SaltDeploy("abb11","test.ping")
                 }
             }
         }
