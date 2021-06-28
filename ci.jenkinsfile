@@ -9,7 +9,7 @@ def deploy = new org.devops.deploy()
 String buildType = "${env.buildType}"
 
 String buildShell = "${env.buildShell}"
-
+String deployHosts = "${env.deployHosts}"
 pipeline{
     agent { node { label "master" }}
     
@@ -19,7 +19,7 @@ pipeline{
                 script{
                     /*mvnHome = tool "M2"*/
                     build.Build(buildType,buildShell)
-		    deploy.SaltDeploy("abb11","test.ping")
+		    deploy.SaltDeploy("${deployHosts}","test.ping")
                 }
             }
         }
