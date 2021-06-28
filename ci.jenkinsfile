@@ -4,6 +4,8 @@
 
 def build = new org.devops.build()
 
+String buildType = "${env.buildType}"
+
 String buildShell = "${env.buildShell}"
 
 pipeline{
