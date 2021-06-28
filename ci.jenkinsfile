@@ -47,7 +47,7 @@ pipeline{
                     sh "${npmHome}/bin/npm ${buildShell}"
                 }
             }
-        }
-    }*/
+        }*/
+    }
     
 }
