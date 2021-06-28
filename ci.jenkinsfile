@@ -22,7 +22,7 @@ pipeline{
 	    steps{
 	        script{
 		    if ("${runopts}" == "GithubPush"){
-		        branchName = bracn - "refs/heads/"
+		        branchName = branch - "refs/heads/"
 		    }
 			
 			
