@@ -40,7 +40,7 @@ pipeline{
 		    tools.PrintMes("构建代码","green")
                     /*mvnHome = tool "M2"*/
                     build.Build(buildType,buildShell)
-		    deploy.SaltDeploy("${deployHosts}","test.ping")
+		    /*deploy.SaltDeploy("${deployHosts}","test.ping")*/
                 }
             }
         }
