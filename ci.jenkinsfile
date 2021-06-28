@@ -26,10 +26,7 @@ pipeline{
 	stage("CheckOut"){
 	    steps{
 	        script{
-		    
-			
-			
-			
+		    	
 		    println("${branchName}")
 		    tools.PrintMes("获取代码","green")
                     checkout([$class: 'GitSCM', branches: [[name: "${branchName}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'f52c699c-67a1-4b55-8ec1-37eb5a590930', url: 'https://github.com/wuuuqqqq/Demo-maven-service.git']]])
@@ -49,5 +46,27 @@ pipeline{
         }
 
     }
+	post {
+	    always{
+		script{
+		    println("always")
+		}
+	    }
+	    success{
+		script{
+		    println("success")
+		}
+	    }
+	    failure{
+		script{
+		    println("failure")
+		}
+	    }
+	    aborted{
+                println("aborted")
+	    }
+	}
+	
+		
     
 }
