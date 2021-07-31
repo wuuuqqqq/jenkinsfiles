@@ -45,24 +45,24 @@ nameserver 114.114.114.114
 nameserver 114.114.114.114 
 EOF
 
-echo "是否换成阿里云的的源 "
-echo "等待3秒:"
-sleep 3
-cat << EOF
-        **********************
-        1.[change aliyuan]
-        2.[no change aliyuan]
-        3.[exit]
-    pls input the num you want:
-        **********************
-EOF
-read -t 30 -p "pls input the num you want:" a
-[ -n "`echo $a|sed 's#[0-9]##g'`" ] && {
-         echo "Input error"
-        exit 1
-}
+#echo "是否换成阿里云的的源 "
+#echo "等待3秒:"
+#sleep 3
+#cat << EOF
+#        **********************
+#        1.[change aliyuan]
+#        2.[no change aliyuan]
+#        3.[exit]
+#    pls input the num you want:
+#        **********************
+#EOF
+#read -t 30 -p "pls input the num you want:" a
+#[ -n "`echo $a|sed 's#[0-9]##g'`" ] && {
+#         echo "Input error"
+#        exit 1
+#}
 iffuncation(){
-if [ $a -eq 1 ];then
+#if [ $a -eq 1 ];then
         echo "change aliyuan"
         echo "等待3S"
         sleep 3
@@ -76,14 +76,14 @@ if [ $a -eq 1 ];then
         yum makecache    &>/dev/null
         echo "等待3S" 
         sleep 3
-elif [ $a -eq 2 ];then
-        echo "no change aliyuan"
-elif [ $a -eq 3 ];then
-        exit 1
-else
-        echo "Input error"
-        exit 1
-fi
+#elif [ $a -eq 2 ];then
+#        echo "no change aliyuan"
+#elif [ $a -eq 3 ];then
+#        exit 1
+#else
+#        echo "Input error"
+#        exit 1
+#fi
 }
 iffuncation
 
